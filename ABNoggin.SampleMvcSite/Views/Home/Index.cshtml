@@ -1,0 +1,35 @@
+﻿@using ABNoggin.MVC
+@{
+	var tagline = AB.Test(
+		"Tagline awesomeness",
+		new []
+		{
+			"The okay AB Testing Framework",
+			"The excellent AB Testing Framework",
+			"The awesome AB Testing Framework"
+		},
+		"Convert download");
+		
+    ViewBag.Title = "AB Noggin - " + tagline;
+
+	// Alternative formats
+	var format1 = this.ABTest("Format 1", "One");
+	var format2 = Html.ABTest("Format 2", "Two");
+	
+}
+
+<h1>AB Noggin</h1>
+<h2>@tagline</h2>
+
+@{{
+	// Double {{ creates code block and scopes all vars to this block
+	var title = AB.Test("Lamda test", new[] {"A", "B"}, "Convert AB");
+	<h1>@title</h1>
+}}
+
+
+
+@if(AB.Test("Go away", "Went away"))
+{
+	<button>Go away now</button>
+}

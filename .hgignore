@@ -1,0 +1,4 @@
+syntax: glob
+ABNoggin.Core/obj/*
+ABNoggin.MVC/obj/*
+ABNoggin.SampleMvcSite/obj/*
